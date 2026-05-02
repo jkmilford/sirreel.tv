@@ -5,301 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SirReel.tv — Coming Soon</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
         
         :root {
             --bg: #0a0a0a;
-            --accent: #ff2d55;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --accent: #00f5ff;
         }
         
         body {
             font-family: 'Inter', system-ui, sans-serif;
             background: var(--bg);
             color: white;
-            line-height: 1.6;
+            margin: 0;
             overflow-x: hidden;
         }
         
         .hero {
             height: 100vh;
-            min-height: 650px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a001a 100%);
+            background: radial-gradient(circle at center, #1a0033 0%, #0a0a0a 70%);
             position: relative;
-            overflow: hidden;
         }
         
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 45, 85, 0.15) 0%, transparent 70%);
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://source.unsplash.com/random/1920x1080/?surreal,ai') no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
             z-index: 1;
         }
         
         .content {
             position: relative;
             z-index: 2;
-            max-width: 720px;
+            max-width: 800px;
             padding: 0 20px;
         }
         
         .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 32px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
         }
         
-        .reel-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(45deg, #ff2d55, #ff8a9f);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            font-weight: 700;
+        .tag {
+            display: inline-block;
+            background: rgba(0, 245, 255, 0.1);
+            color: var(--accent);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            border: 1px solid rgba(0, 245, 255, 0.3);
         }
         
         h1 {
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            background: linear-gradient(90deg, #ffffff, #ff8a9f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 4.2rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-family: 'Space Grotesk', sans-serif;
         }
         
-        .tagline {
-            font-size: 1.5rem;
-            color: #ccc;
-            margin-bottom: 48px;
-            font-weight: 500;
+        .subtitle {
+            font-size: 1.65rem;
+            color: #ddd;
+            max-width: 620px;
+            margin: 0 auto 50px;
+            font-weight: 400;
         }
         
         .coming-soon {
-            display: inline-block;
-            background: rgba(255, 45, 85, 0.1);
-            color: #ff2d55;
-            padding: 8px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            letter-spacing: 2px;
+            font-size: 1.35rem;
+            letter-spacing: 4px;
+            opacity: 0.9;
             margin-bottom: 40px;
-            border: 1px solid rgba(255, 45, 85, 0.3);
         }
         
         .email-form {
-            max-width: 420px;
+            max-width: 460px;
             margin: 0 auto;
         }
         
-        .email-form input {
+        input {
             width: 100%;
-            padding: 18px 24px;
+            padding: 20px;
             background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 12px 0 0 12px;
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 12px;
             color: white;
             font-size: 1.1rem;
-            outline: none;
-            transition: all 0.3s;
         }
         
-        .email-form input:focus {
-            border-color: var(--accent);
-            background: rgba(255,255,255,0.12);
-        }
-        
-        .email-form button {
-            padding: 18px 32px;
+        button {
+            margin-top: 12px;
+            width: 100%;
+            padding: 18px;
             background: var(--accent);
-            color: white;
+            color: black;
+            font-weight: 700;
             border: none;
-            border-radius: 0 12px 12px 0;
-            font-weight: 600;
-            font-size: 1.1rem;
+            border-radius: 12px;
+            font-size: 1.2rem;
             cursor: pointer;
-            transition: all 0.3s;
         }
         
-        .email-form button:hover {
-            background: #ff4d6b;
-            transform: translateY(-2px);
-        }
-        
-        .form-group {
-            display: flex;
-            margin-bottom: 24px;
-        }
-        
-        .success {
-            display: none;
-            color: #4ade80;
-            margin-top: 16px;
-            font-weight: 500;
-        }
-        
-        .features {
-            padding: 100px 20px;
-            background: #111;
-            text-align: center;
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .card {
-            background: #1a1a1a;
-            padding: 32px;
-            border-radius: 16px;
-            border: 1px solid #333;
+        button:hover {
+            background: #00e0e0;
+            transform: scale(1.03);
         }
         
         footer {
-            padding: 60px 20px 30px;
             text-align: center;
-            border-top: 1px solid #222;
+            padding: 60px 20px;
             color: #666;
-            font-size: 0.95rem;
-        }
-        
-        .socials a {
-            color: #888;
-            margin: 0 12px;
-            font-size: 1.4rem;
-            transition: color 0.3s;
-        }
-        
-        .socials a:hover {
-            color: #ff2d55;
-        }
-        
-        @media (max-width: 640px) {
-            h1 {
-                font-size: 3.2rem;
-            }
-            .tagline {
-                font-size: 1.25rem;
-            }
         }
     </style>
 </head>
 <body>
     <section class="hero">
         <div class="content">
-            <div class="logo">
-                <div class="reel-icon">🎬</div>
-                <h2 style="font-size: 2.2rem; font-weight: 700;">SirReel.tv</h2>
-            </div>
+            <div class="logo">SIRREEL</div>
             
-            <div class="coming-soon">COMING SOON</div>
+            <div class="tag">AI-POWERED SURREAL VIDEO</div>
             
-            <h1>Short Videos.<br>Real Talent.<br>Zero Filler.</h1>
+            <h1>Surreal Experiences<br>for the AI Era</h1>
             
-            <p class="tagline">The new home for the best vertical videos on the internet.</p>
+            <p class="subtitle">
+                Mind-bending short films, motion design, and visual storytelling — 
+                created at the intersection of human creativity and artificial intelligence.
+            </p>
+            
+            <div class="coming-soon">COMING SOON — SUMMER 2026</div>
             
             <div class="email-form">
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="your@email.com" required>
-                    <button onclick="subscribe()">Notify Me</button>
+                <input type="email" id="email" placeholder="your@email.com" />
+                <button onclick="subscribe()">Get Early Access</button>
+                <div id="success" style="margin-top: 16px; color: #00ff9d; display: none;">
+                    ✅ You're on the list. Welcome to the future.
                 </div>
-                <div id="success" class="success">✅ You're on the list. We'll let you know when we launch!</div>
-            </div>
-            
-            <p style="margin-top: 32px; color: #888; font-size: 0.95rem;">
-                Launching Summer 2026
-            </p>
-        </div>
-    </section>
-    
-    <section class="features">
-        <div style="max-width: 800px; margin: 0 auto 60px;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Why SirReel?</h2>
-            <p style="color: #aaa; font-size: 1.2rem;">Built for creators who actually make great content.</p>
-        </div>
-        
-        <div class="grid">
-            <div class="card">
-                <h3 style="font-size: 1.6rem; margin-bottom: 12px;">🎥 Creator First</h3>
-                <p style="color: #ccc;">Better monetization, real engagement, and zero algorithm games.</p>
-            </div>
-            <div class="card">
-                <h3 style="font-size: 1.6rem; margin-bottom: 12px;">🔥 High Quality Only</h3>
-                <p style="color: #ccc;">No spam. No dance trends. Just great short-form storytelling.</p>
-            </div>
-            <div class="card">
-                <h3 style="font-size: 1.6rem; margin-bottom: 12px;">📱 Mobile Native</h3>
-                <p style="color: #ccc;">Designed from the ground up for vertical video experience.</p>
             </div>
         </div>
     </section>
-    
+
     <footer>
-        <p style="margin-bottom: 20px; font-size: 1.1rem;">SirReel.tv © 2026</p>
-        <div class="socials">
-            <a href="#" target="_blank">𝕏</a>
-            <a href="#" target="_blank">Instagram</a>
-            <a href="#" target="_blank">TikTok</a>
-        </div>
-        <p style="margin-top: 40px; font-size: 0.85rem;">
-            Made with ❤️ for the next generation of creators
-        </p>
+        <p>SirReel.tv © 2026 • Surreal Motion for the AI Revolution</p>
     </footer>
 
     <script>
         function subscribe() {
-            const emailInput = document.getElementById('email');
-            const successMsg = document.getElementById('success');
-            
-            if (emailInput.value.trim() !== '') {
-                successMsg.style.display = 'block';
-                emailInput.value = '';
-                
-                // Auto hide after 5 seconds
-                setTimeout(() => {
-                    successMsg.style.display = 'none';
-                }, 5000);
+            const email = document.getElementById('email');
+            const success = document.getElementById('success');
+            if (email.value.trim()) {
+                success.style.display = 'block';
+                email.value = '';
             }
         }
-        
-        // Allow Enter key to submit
-        document.getElementById('email').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                subscribe();
-            }
-        });
-        
-        // Simple animation on scroll
-        window.addEventListener('scroll', () => {
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                if (cardTop < window.innerHeight - 100) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }
-            });
-        });
     </script>
 </body>
 </html>
