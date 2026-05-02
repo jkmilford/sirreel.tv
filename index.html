@@ -3,166 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SirReel.tv — Coming Soon</title>
+    <title>SirReel.tv</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-        
-        :root {
-            --bg: #0a0a0a;
-            --accent: #00f5ff;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
         
         body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: var(--bg);
-            color: white;
             margin: 0;
-            overflow-x: hidden;
-        }
-        
-        .hero {
+            padding: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: radial-gradient(circle at center, #1a0033 0%, #0a0a0a 70%);
-            position: relative;
+            overflow: hidden;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://source.unsplash.com/random/1920x1080/?surreal,ai') no-repeat center center;
-            background-size: cover;
-            opacity: 0.15;
-            z-index: 1;
-        }
-        
-        .content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 20px;
+        .container {
+            max-width: 680px;
+            padding: 40px 20px;
         }
         
         .logo {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.2rem;
+            font-size: 4.8rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-        }
-        
-        .tag {
-            display: inline-block;
-            background: rgba(0, 245, 255, 0.1);
-            color: var(--accent);
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            margin-bottom: 24px;
-            border: 1px solid rgba(0, 245, 255, 0.3);
-        }
-        
-        h1 {
-            font-size: 4.2rem;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -3px;
+            margin-bottom: 8px;
         }
         
         .subtitle {
-            font-size: 1.65rem;
-            color: #ddd;
-            max-width: 620px;
-            margin: 0 auto 50px;
+            font-size: 1.35rem;
+            color: #aaaaaa;
+            margin-bottom: 60px;
             font-weight: 400;
         }
         
+        h1 {
+            font-size: 3.4rem;
+            line-height: 1.15;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        p {
+            font-size: 1.25rem;
+            color: #bbbbbb;
+            max-width: 520px;
+            margin: 0 auto 60px;
+        }
+        
         .coming-soon {
-            font-size: 1.35rem;
-            letter-spacing: 4px;
-            opacity: 0.9;
-            margin-bottom: 40px;
+            display: inline-block;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            padding: 10px 28px;
+            border: 1px solid #333;
+            border-radius: 50px;
+            margin-bottom: 50px;
         }
         
         .email-form {
-            max-width: 460px;
+            max-width: 420px;
             margin: 0 auto;
         }
         
         input {
             width: 100%;
-            padding: 20px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(0, 245, 255, 0.3);
-            border-radius: 12px;
+            padding: 20px 24px;
+            background: #111111;
+            border: 1px solid #333;
+            border-radius: 16px;
             color: white;
             font-size: 1.1rem;
+            margin-bottom: 12px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        input:focus {
+            border-color: #ffffff;
         }
         
         button {
-            margin-top: 12px;
             width: 100%;
             padding: 18px;
-            background: var(--accent);
+            background: white;
             color: black;
-            font-weight: 700;
+            font-weight: 600;
+            font-size: 1.1rem;
             border: none;
-            border-radius: 12px;
-            font-size: 1.2rem;
+            border-radius: 16px;
             cursor: pointer;
+            transition: all 0.3s;
         }
         
         button:hover {
-            background: #00e0e0;
-            transform: scale(1.03);
+            background: #ddd;
+            transform: translateY(-2px);
         }
         
         footer {
-            text-align: center;
-            padding: 60px 20px;
-            color: #666;
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            font-size: 0.95rem;
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <div class="content">
-            <div class="logo">SIRREEL</div>
-            
-            <div class="tag">AI-POWERED SURREAL VIDEO</div>
-            
-            <h1>Surreal Experiences<br>for the AI Era</h1>
-            
-            <p class="subtitle">
-                Mind-bending short films, motion design, and visual storytelling — 
-                created at the intersection of human creativity and artificial intelligence.
-            </p>
-            
-            <div class="coming-soon">COMING SOON — SUMMER 2026</div>
-            
-            <div class="email-form">
-                <input type="email" id="email" placeholder="your@email.com" />
-                <button onclick="subscribe()">Get Early Access</button>
-                <div id="success" style="margin-top: 16px; color: #00ff9d; display: none;">
-                    ✅ You're on the list. Welcome to the future.
-                </div>
+    <div class="container">
+        <div class="logo">SIRREEL</div>
+        <div class="subtitle">.tv</div>
+        
+        <div class="coming-soon">COMING SOON</div>
+        
+        <h1>Surreal motion.<br>Beautifully strange stories.</h1>
+        
+        <p>
+            Short-form video reimagined. 
+            Where motion design meets surreal storytelling.
+        </p>
+        
+        <div class="email-form">
+            <input type="email" id="email" placeholder="your@email.com" />
+            <button onclick="subscribe()">Notify Me</button>
+            <div id="success" style="margin-top: 20px; color: #00ff9d; display: none; font-weight: 500;">
+                ✓ You're on the list.
             </div>
         </div>
-    </section>
+    </div>
 
     <footer>
-        <p>SirReel.tv © 2026 • Surreal Motion for the AI Revolution</p>
+        SirReel.tv © 2026
     </footer>
 
     <script>
         function subscribe() {
             const email = document.getElementById('email');
             const success = document.getElementById('success');
-            if (email.value.trim()) {
+            if (email.value.trim() !== '') {
                 success.style.display = 'block';
                 email.value = '';
             }
